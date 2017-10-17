@@ -38,7 +38,7 @@ public class LearningActivity extends AppCompatActivity {
                     Uri number = Uri.parse(contact);
                     Intent callEmergency = new Intent(Intent.ACTION_DIAL, number);
                     PackageManager packageManager = getPackageManager();
-                    List<ResolveInfo> activities = packageManager.queryIntentActivities(callEmergency, 0);
+                    List<ResolveInfo> activities = packageManager.queryIntentActivities(callEmergency, PackageManager.MATCH_DEFAULT_ONLY);
                     boolean isIntentSafe = activities.size() > 0;
                     if (isIntentSafe) {
                         startActivity(callEmergency);
@@ -55,4 +55,8 @@ public class LearningActivity extends AppCompatActivity {
         });
 
     }
+
+    /* Uri webpage = Uri.parse("http://www.android.com");
+Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+*/
 }

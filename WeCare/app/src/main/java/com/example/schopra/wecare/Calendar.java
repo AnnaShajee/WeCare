@@ -37,7 +37,7 @@ public class Calendar extends AppCompatActivity {
                     Uri number = Uri.parse(contact);
                     Intent callEmergency = new Intent(Intent.ACTION_DIAL, number);
                     PackageManager packageManager = getPackageManager();
-                    List<ResolveInfo> activities = packageManager.queryIntentActivities(callEmergency, 0);
+                    List<ResolveInfo> activities = packageManager.queryIntentActivities(callEmergency, PackageManager.MATCH_DEFAULT_ONLY);
                     boolean isIntentSafe = activities.size() > 0;
                     if (isIntentSafe) {
                         startActivity(callEmergency);
@@ -54,5 +54,14 @@ public class Calendar extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    /*Intent calendarIntent = new Intent(Intent.ACTION_INSERT, Events.CONTENT_URI);
+Calendar beginTime = Calendar.getInstance().set(2012, 0, 19, 7, 30);
+Calendar endTime = Calendar.getInstance().set(2012, 0, 19, 10, 30);
+calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis());
+calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
+calendarIntent.putExtra(Events.TITLE, "Ninja class");
+calendarIntent.putExtra(Events.EVENT_LOCATION, "Secret dojo");
+*/
 
 }
