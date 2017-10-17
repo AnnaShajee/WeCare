@@ -1,6 +1,9 @@
 package com.example.schopra.wecare;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.view.View;
 
 import java.io.File;
 import java.io.FileInputStream;

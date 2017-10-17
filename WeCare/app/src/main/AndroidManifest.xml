@@ -52,7 +52,7 @@
         <activity
             android:name=".NoteActivity"
             android:label="@string/title_activity_note"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DiaryActivity"
             android:label="@string/title_activity_note"
