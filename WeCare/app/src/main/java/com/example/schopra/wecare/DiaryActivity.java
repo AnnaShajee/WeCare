@@ -27,6 +27,7 @@ public class DiaryActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +37,6 @@ public class DiaryActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nListViewNotes = (ListView)findViewById(R.id.main_ListView);
     }
@@ -51,6 +51,9 @@ public class DiaryActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_main_new_note:
                 startActivity(new Intent(this, NoteActivity.class));
+                return true;
+            case android.R.id.home:
+                finish();
                 return true;
         }
         return true;

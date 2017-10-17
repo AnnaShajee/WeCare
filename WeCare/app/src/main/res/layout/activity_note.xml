@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.schopra.wecare.NoteActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blueAccent"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
 
     <EditText
         android:id="@+id/note_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:selectAllOnFocus="false"
@@ -21,10 +35,11 @@
     <EditText
         android:id="@+id/note_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="456dp"
         android:ems="10"
         android:gravity="top"
+        android:hint="Content"
         android:inputType="textPersonName"
-        android:hint="Content" />
+        android:layout_gravity="bottom"/>
 
 </LinearLayout>

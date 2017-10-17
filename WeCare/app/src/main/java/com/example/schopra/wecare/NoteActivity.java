@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -20,6 +21,11 @@ public class NoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         nTitle = (EditText)findViewById(R.id.note_title);
         nContent = (EditText)findViewById(R.id.note_content);
         nFileName = getIntent().getStringExtra("NOTE_FILE");
@@ -46,9 +52,14 @@ public class NoteActivity extends AppCompatActivity {
                 return true;
             case R.id.action_delete_note:
                 deleteNote();
+                return true;
+            case android.R.id.home:
+                finish();
+                return true;
         }
         return true;
     }
+
     private void saveNote() {
         Note note;
         if(nTitle.getText().toString().isEmpty()) {

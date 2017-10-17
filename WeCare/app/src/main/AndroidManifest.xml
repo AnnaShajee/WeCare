@@ -49,10 +49,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.schopra.wecare.MainActivity" />
         </activity>
-        <activity android:name=".NoteActivity" />
+        <activity
+            android:name=".NoteActivity"
+            android:label="@string/title_activity_note"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".DiaryActivity"
-            android:label="Notes"
+            android:label="@string/title_activity_note"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

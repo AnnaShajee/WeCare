@@ -9,15 +9,6 @@
     tools:context="com.example.schopra.wecare.MainActivity">
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/call"
-        app:backgroundTint="@color/blueAccent"/>
-
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,10 +30,24 @@
         android:layout_height="fill_parent"
         android:layout_marginTop="80dp"
         android:columnWidth="120dp"
+        android:elevation="0dp"
         android:gravity="center"
         android:horizontalSpacing="0dp"
         android:numColumns="2"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="50dp" />
+        android:verticalSpacing="50dp"
+        app:elevation="0dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:elevation="7dp"
+        app:backgroundTint="@color/blueAccent"
+        app:elevation="7dp"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/call" />
 
 </android.support.design.widget.CoordinatorLayout>
