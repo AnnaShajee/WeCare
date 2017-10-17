@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">We Care</string>
+    <string name="title_activity_main">Home</string>
+    <string name="title_activity_patient">Patient Details</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_journal">Journal</string>
+    <string name="title_activity_learning">Learn More</string>
+    <string name="title_activity_note">Notes</string>
+</resources>
