@@ -12,18 +12,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
+import android.widget.EditText;
 import android.widget.Toast;
+
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class EditAppointmentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_edit_appointment);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(callEmergency);
                     }
                     else {
-                        Toast.makeText(MainActivity.this, "No app to handle activity.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditAppointmentActivity.this, "No app to handle activity.", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else{
@@ -54,38 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
-
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Intent intent;
-                if (position == 0) {
-                    intent = new Intent(MainActivity.this, PatientActivity.class);
-                }
-                else if (position == 1) {
-                    intent = new Intent(MainActivity.this, LearningActivity.class);
-                }
-                else if (position == 2) {
-                    intent = new Intent(MainActivity.this, Calendar.class);
-                }
-                else if (position == 3) {
-                    intent = new Intent(MainActivity.this, DiaryActivity.class);
-                }
-                else if (position == 4) {
-                    intent = new Intent(MainActivity.this, PatientActivity.class);
-                }
-                else if (position == 5) {
-                    intent = new Intent(MainActivity.this, PatientActivity.class);
-                }
-                else {
-                    intent = new Intent(MainActivity.this, LaunchActivity.class);
-                }
-                startActivity(intent);
-            }
-        });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 }

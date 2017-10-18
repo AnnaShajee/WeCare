@@ -62,6 +62,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.schopra.wecare.MainActivity" />
         </activity>
+        <activity
+            android:name=".AddAppointmentActivity"
+            android:label="@string/title_activity_add_appointment"
+            android:parentActivityName=".Calendar"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.schopra.wecare.Calendar" />
+        </activity>
+        <activity
+            android:name=".EditAppointmentActivity"
+            android:label="@string/title_activity_edit_appointment"
+            android:parentActivityName=".Calendar"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.schopra.wecare.Calendar" />
+        </activity>
     </application>
 
 </manifest>

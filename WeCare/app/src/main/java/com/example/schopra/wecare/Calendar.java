@@ -55,6 +55,16 @@ public class Calendar extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    public void calAdd(View view) {
+        Intent addAppointment = new Intent(this, AddAppointmentActivity.class);
+        startActivity(addAppointment);
+    }
+
+    public void calEdit(View view) {
+        Intent editAppointment = new Intent(this, EditAppointmentActivity.class);
+        startActivity(editAppointment);
+    }
+
     /*Intent calendarIntent = new Intent(Intent.ACTION_INSERT, Events.CONTENT_URI);
 Calendar beginTime = Calendar.getInstance().set(2012, 0, 19, 7, 30);
 Calendar endTime = Calendar.getInstance().set(2012, 0, 19, 10, 30);
